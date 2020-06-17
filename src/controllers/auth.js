@@ -1,15 +1,12 @@
 const isAValidUser = (user) => {
-	if (!(user.role === 'admin' || user.role === 'user')) {
-		throw new Error('The role of the user must be or user or admin.');
+	if (user.name === -1 || user.email === -1 ){
+		throw new Error('The user does not exist in our DB.');
 	} 
 };
 
-const isAuth = (user) => {
+exports.isAuth = (user) => {
 	isAValidUser(user);
-	let isAdmin = user.role === 'admin' ? true : false;
-	return isAdmin;
+	const fullAccess = user.role === 'admin' ? true : false;
+	return fullAccess;
 };
 
-module.exports = {
-	isAuth
-};
