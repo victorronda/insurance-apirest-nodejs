@@ -2,8 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './src/routes/index';
 
-
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -21,8 +19,5 @@ app.use((req, res, next) => {
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
-
-
-/* Rutas importarlas, manejarlas en otra carpeta */
 
 app.use('/api', routes);

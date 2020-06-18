@@ -1,12 +1,14 @@
-const isAValidUser = (user) => {
-	if (user.name === -1 || user.email === -1 ){
-		throw new Error('The user does not exist in our DB.');
-	} 
-};
 
-exports.isAuth = (user) => {
-	isAValidUser(user);
-	const fullAccess = user.role === 'admin' ? true : false;
-	return fullAccess;
+exports.isAuth = ( data, currentUser, fullAccess, res ) => {
+
+    if(fullAccess === true) {
+        data ? res.status(200).json(data) : res.status(404).json({message: "Not found"});
+    } else {
+        if(currentUser.role === 'admin') {
+            data ? res.status(200).json(data) : res.status(404).json({message: "Not found"});
+        } else {
+            res.status(401).json({message: "Your role does not have access to this content. Please, contact your administrator."});
+        }
+    }
 };
 
