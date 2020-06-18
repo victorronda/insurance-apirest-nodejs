@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "server": "node --exec babel-node app.js",
     "dev": "nodemon --exec babel-node app.js",
     "test": "jest"
   },
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.10.2",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
@@ -18,8 +20,10 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/node": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "babel-cli": "^6.26.0",
+    "babel-jest": "^26.0.1",
     "babel-preset-env": "^1.7.0",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4",
