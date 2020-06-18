@@ -114,11 +114,13 @@ exports.getUserDataLinkedByPolicyNumber = async (req, res , next) => {
         const policyData = policiesData.data.policies.filter(policy => policy.clientId === client.id)
         
       
+        console.log('policyData', policyData.length > 0 ? policyData.map(policy => policy.id) : null);
         
-        return {...client, policies_numbers: policyData.map(policy => policy.id)}     
+        return {...client, policies_numbers: policyData.length > 0 ? policyData.map(policy => policy.id) : null}     
     })
 
     const theClient = clientListWithPolicy.filter(client => client.name === clientSearched)[0];
+
 
 
     
