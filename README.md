@@ -86,9 +86,7 @@ src/
     |_ axios.js
 |_ __tests__
     |_ controllers/
-        |_ auth.js
-        |_ data.js
-        |_ index.js    
+        |_ auth.js  
 |_ controllers/
     |_ auth.js
     |_ data.js
