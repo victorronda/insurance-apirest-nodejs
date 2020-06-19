@@ -1,19 +1,21 @@
 import { isAuth } from '../../controllers/auth';
-import axios from 'axios';
+import mockAxios from 'jest-mock-axios';
 
+
+
+/* UNFINISHED */
 
 describe('Authorization tests depending on fullAccess',  () => {
     let mockData, mockCurrentUser, fullAccess;
-    
-    
-    
+
     it('should return JSON data if the fullAccess === true and there is data',  () =>{
+
     fullAccess = true;
     mockData = { name: 'test' };
     mockCurrentUser = {role: 'admin'};
     const res = axios.get.mockImplementationOnce(() => Promise.resolve({ status: 200, data: mockData }));
-    //console.log('Aquiiii', res);
-    
+    const res = mockAxios.mockResponseFor({url: '/get'}, {data: mockData}, {status: 200});
+    console.log('Aquiiii', res);
     const result = isAuth(mockData,mockCurrentUser, fullAccess, res);
     expect(mockData).toEqual(result);
     })

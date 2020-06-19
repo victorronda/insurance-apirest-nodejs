@@ -1,3 +1,2 @@
-export default {
-    get: jest.fn(() => Promise.resolve({status: 0, data: {}}))
-};
+import mockAxios from 'jest-mock-axios';
+export default mockAxios;
