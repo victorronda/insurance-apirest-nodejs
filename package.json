@@ -28,7 +28,7 @@
     "babel-preset-env": "^1.7.0",
     "jest": "^26.0.1",
     "jest-mock-axios": "^4.2.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "rimraf": "^3.0.2"
   }
 }
